@@ -231,8 +231,38 @@ void backwardElimination(){
                 cout << tmpFeatures[k] << " ";
             }
             cout << "}.";
-            cout <<  " Accuracy is: " << currAccuracy << "%" << endl << endl;
+            cout <<  " Accuracy is: " << currAccuracy << "%" << endl;
         }
+
+        //remove the worst feature from our current features
+        int removedFeature = currFeatures[worstFeature];
+        cout << "Removed feature: " << removedFeature << endl;
+
+        currFeatures.erase(currFeatures.begin() + worstFeature);
+
+        //now, we will output the best feature and accuracy
+        cout << "The best feature at this level is: { ";
+        for(int k = 0; k < currFeatures.size(); k++){
+            cout << currFeatures[k] << " ";
+        }
+        cout << "}.";
+        cout << "Accuracy is: " << bestAccuracy << "%" << endl << endl;
+
+        //update the best overall features and accuracy
+        if(bestAccuracy > bestOverallAccuracy){
+            bestOverallAccuracy = bestAccuracy;
+            bestOverallFeatures = currFeatures;
+        }
+    }
+
+    //output the best overall 
+    cout << "\nFinished Search!!" << endl;
+    cout << "The best feature subset is: {";
+    for (int i = 0; i < bestOverallFeatures.size(); i++){
+        cout << bestOverallFeatures[i] << " ";
+    }
+    cout << "}.";
+    cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
 
     }
 }
@@ -250,6 +280,7 @@ int main(){
     cout << "1. CS170_Large_DataSet__29.txt" << endl;
     cout << "2. CS170_Small_DataSet__119.txt" << endl;
     cin >> filename;
+    cout << endl;
 
     //read the dataset
     readDataSet(filename);
@@ -268,7 +299,7 @@ int main(){
         cout << allFeatures[i] << " ";
     }
     cout << " }.";
-    cout << " Accuracy is: " << allFeaturesAccuracy << "%" << endl;
+    cout << " Accuracy is: " << allFeaturesAccuracy << "%" << endl << endl;
 
     //now, ask which algorithm they want to use
     int algorithm;
@@ -276,6 +307,7 @@ int main(){
     cout << "1. Forward Selection" << endl;
     cout << "2. Backward Elimination" << endl;
     cin >> algorithm;
+    cout << endl;
 
     //if it isn't 1 or 2, let them try again
     while(algorithm != 1 && algorithm != 2){
@@ -283,6 +315,7 @@ int main(){
         cout << "I'm sorry, that wasn't a valid choice :(" << endl;
         cout << "Please try again :D!" << endl;
         cin >> algorithm;
+        cout << endl;
     }
 
     switch(algorithm){
