@@ -152,7 +152,7 @@ void forwardSelection(){
             for(int x = 0; x < tmpFeatures.size(); x++){
                 cout << tmpFeatures[x] << " ";
             }
-            cout << " }.";
+            cout << "}.";
             cout <<  " Accuracy is: " << currAccuracy << "%" << endl;
         }
 
@@ -296,7 +296,7 @@ int main(){
     for(int i = 0; i < allFeatures.size(); i++){
         cout << allFeatures[i] << " ";
     }
-    cout << " }.";
+    cout << "}.";
     cout << " Accuracy is: " << allFeaturesAccuracy << "%" << endl << endl;
 
     //now, ask which algorithm they want to use
