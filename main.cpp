@@ -14,7 +14,7 @@
 using namespace std;
 
 //we will store the data of our dataset into a 2D vector
-vector<vector<double>> data;
+vector<vector<double>> dataSet;
 
 //here will go the function where we read the data
 //from the dataset file the user types in 
@@ -40,14 +40,14 @@ void readDataset(string filename){
             features.push_back(value);
         }
 
-        data.push_back(features);
+        dataSet.push_back(features);
     }
 
     //here we will let the user know that we have loaded the data
     //we also have to output the number of instances and features
     cout << "The Data has been loaded successfully." << endl;
-    cout << "It has " << data.size() << " instances and ";
-    cout << data[0].size() - 1 << " features." << endl;
+    cout << "It has " << dataSet.size() << " instances and ";
+    cout << dataSet[0].size() - 1 << " features." << endl;
 }
 
 
@@ -78,37 +78,37 @@ double nearestNeighbor(vector<int> selectedFeatures){
     int correctClass = 0;
 
     //loop through each instance in the dataset
-    for(int i = 0; i < data.size(); i++){
+    for(int i = 0; i < dataSet.size(); i++){
         double minDistance = numeric_limits<double>::max();
         int nearestClass = -1;
 
         //now we will loop through the other instances
         //we do this so that we can find the nearest neighbor
-        for(int j = 0; j < data.size(); j++){
+        for(int j = 0; j < dataSet.size(); j++){
             //if the instance are the same skip.
             if(i == j){
                 continue;
             }else{
-                double distance = calDistance(data[i], data[j], selectedFeatures);
+                double distance = calDistance(dataSet[i], dataSet[j], selectedFeatures);
 
                 //But, if the distance is less than the min, update the min and nearest class
                 //nearest class is updated with the class of the first instance (or column)
                 if(distance < minDistance){
                     minDistance = distance;
-                    nearestClass = data[j][0]; 
+                    nearestClass = dataSet[j][0]; 
                 }
             }
         }
 
         //check if the nearest class is the same as the actual
-        if(nearestClass == data[i][0]){
+        if(nearestClass == dataSet[i][0]){
             correctClass++;
         }
 
     }
 
     //now we calculate the accuracy
-    double accuracy = (double)correctClass / data.size() * 100.0;
+    double accuracy = (double)correctClass / dataSet.size() * 100.0;
 
     return accuracy;
 }
@@ -123,12 +123,12 @@ void forwardSelection(){
     double bestOverallAccuracy = 0.0;
 
     //loop through the features, starting with an empty set
-    for(int i = 1; i <= (data[0].size() - 1); i++){
+    for(int i = 1; i <= (dataSet[0].size() - 1); i++){
         int bestFeature = -1;
         double bestAccuracy = 0.0;
 
         //second loop for the features that haven't been selected
-        for(int j = 1; j <= (data[0].size() - 1); j++){
+        for(int j = 1; j <= (dataSet[0].size() - 1); j++){
             //if already selected, skip
             if(find(currFeatures.begin(), currFeatures.end(),j) != currFeatures.end()){
                 continue;
@@ -183,7 +183,6 @@ void forwardSelection(){
     }
     cout << "}.";
     cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
-    }
 }
 
 
@@ -197,7 +196,7 @@ void backwardElimination(){
     double bestOverallAccuracy = 0.0;
 
     //first, we start with all the features
-    for(int i = 1; i <= (data[0].size() - 1); i++){
+    for(int i = 1; i <= (dataSet[0].size() - 1); i++){
         currFeatures.push_back(i);
     }
 
@@ -264,7 +263,6 @@ void backwardElimination(){
     cout << "}.";
     cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
 
-    }
 }
 
 
@@ -283,12 +281,12 @@ int main(){
     cout << endl;
 
     //read the dataset
-    readDataSet(filename);
+    readDataset(filename);
 
     //have to include a small output for all the features and the accuracy of using all the features
     //for the data graph
     vector<int> allFeatures;
-    for(int i = 1; i <= (data[0].size() - 1); i++){
+    for(int i = 1; i <= (dataSet[0].size() - 1); i++){
         allFeatures.push_back(i);
     }
 
