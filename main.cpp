@@ -157,6 +157,32 @@ void forwardSelection(){
         }
 
         //add the best feature to our current features
+        //add the best feature to our current features
+        currFeatures.push_back(bestFeature);
+
+        //now, we will output the best feature and accuracy
+        cout << "The best feature at this level is: { ";
+        for(int k = 0; k < currFeatures.size(); k++){
+            cout << currFeatures[k] << " ";
+        }
+        cout << "}.";
+        cout << "Accuracy is: " << bestAccuracy << "%" << endl << endl;
+
+        //update the best overall features and accuracy
+        if(bestAccuracy > bestOverallAccuracy){
+            bestOverallAccuracy = bestAccuracy;
+            bestOverallFeatures = currFeatures;
+        }
+    }
+
+    //output the best overall 
+    cout << "\nFinished Search!!" << endl;
+    cout << "The best feature subset is: {";
+    for (int i = 0; i < bestOverallFeatures.size(); i++){
+        cout << bestOverallFeatures[i] << " ";
+    }
+    cout << "}.";
+    cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
     }
 }
 
@@ -165,7 +191,51 @@ void forwardSelection(){
 //should be slightly different from forward selection
 //we will start with all the features and remove one 
 // feature at a time
-void backwardElimination(){}
+void backwardElimination(){
+    vector<int> currFeatures;
+    vector<int> bestOverallFeatures;
+    double bestOverallAccuracy = 0.0;
+
+    //first, we start with all the features
+    for(int i = 1; i <= (data[0].size() - 1); i++){
+        currFeatures.push_back(i);
+    }
+
+    bestOverallAccuracy = nearestNeighbor(currFeatures);
+    bestOverallFeatures = currFeatures;
+
+    //loop through the remaining features
+    while(currFeatures.size() > 1){
+        int worstFeature = -1;
+        double bestAccuracy = 0.0;
+        
+        //we will loop through features, again
+        //remove one feature at a time
+        for(int x = 0; x < currFeatures.size(); x++){
+            vector<int> tmpFeatures = currFeatures;
+
+            //remove the feature at index x
+            tmpFeatures.erase(tmpFeatures.begin() + x);
+
+            double currAccuracy = nearestNeighbor(tmpFeatures);
+
+            //if curr accuracy is better than our current best, update the best
+            if(currAccuracy > bestAccuracy){
+                bestAccuracy = currAccuracy;
+                worstFeature = x;   //also update the worst feature
+            }
+
+            //output the features and the accuracy
+            cout << "\nUsing feature(s) { ";
+            for(int k = 0; k < tmpFeatures.size(); k++){
+                cout << tmpFeatures[k] << " ";
+            }
+            cout << "}.";
+            cout <<  " Accuracy is: " << currAccuracy << "%" << endl << endl;
+        }
+
+    }
+}
 
 
 //main function will go here
