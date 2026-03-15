@@ -73,7 +73,45 @@ double calDistance(const vector<double>& inst1, const vector<double>& inst2, con
 
 //here we will have the nearest neighbor classifier
 //it will use leave one out cross validation to calculate the accuracy of the classifier
-double nearestNeighbor(vector<int> selectedFeatures){}
+double nearestNeighbor(vector<int> selectedFeatures){
+    //count the number of correct classifications
+    int correctClass = 0;
+
+    //loop through each instance in the dataset
+    for(int i = 0; i < data.size(); i++){
+        double minDistance = numeric_limits<double>::max();
+        int nearestClass = -1;
+
+        //now we will loop through the other instances
+        //we do this so that we can find the nearest neighbor
+        for(int j = 0; j < data.size(); j++){
+            //if the instance are the same skip.
+            if(i == j){
+                continue;
+            }else{
+                double distance = calDistance(data[i], data[j], selectedFeatures);
+
+                //But, if the distance is less than the min, update the min and nearest class
+                //nearest class is updated with the class of the first instance (or column)
+                if(distance < minDistance){
+                    minDistance = distance;
+                    nearestClass = data[j][0]; 
+                }
+            }
+        }
+
+        //check if the nearest class is the same as the actual
+        if(nearestClass == data[i][0]){
+            correctClass++;
+        }
+
+    }
+
+    //now we calculate the accuracy
+    double accuracy = (double)correctClass / data.size() * 100.0;
+
+    return accuracy;
+}
 
 
 //this will be our forward selection algorithm
