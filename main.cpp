@@ -261,7 +261,7 @@ void backwardElimination(){
         cout << bestOverallFeatures[i] << " ";
     }
     cout << "}.";
-    cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
+    cout << " With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
 
 }
 
