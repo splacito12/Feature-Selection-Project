@@ -18,14 +18,56 @@ vector<vector<double>> data;
 
 //here will go the function where we read the data
 //from the dataset file the user types in 
-void readDataset(string filename){}
+void readDataset(string filename){
+    ifstream file(filename);
+    string line;
+
+    //add an error message
+    if(!file.is_open()){
+        cerr << "Error: Could not open the file " << filename << endl;
+        exit(1);
+    }
+
+    //store the data into a vector
+    while(getline(file, line)){
+        stringstream ss(line);
+
+        double value;
+        vector<double> features;
+
+        //we have to read from the file
+        while(ss >> value){
+            features.push_back(value);
+        }
+
+        data.push_back(features);
+    }
+
+    //here we will let the user know that we have loaded the data
+    //we also have to output the number of instances and features
+    cout << "The Data has been loaded successfully." << endl;
+    cout << "It has " << data.size() << " instances and ";
+    cout << data[0].size() - 1 << " features." << endl;
+}
 
 
 //now we will need to create a function to calculate the distance between the two instances
 //we will basically be using only selected features
 //needed for nearest neighbor
 //we will be using the equation from the notes
-double calDistance(const vector<double> inst1, vector<double> inst2, const vector<int> selectedFeatures){}
+double calDistance(const vector<double>& inst1, const vector<double>& inst2, const vector<int> selectedFeatures){
+    double distance = 0.0;
+
+    //loop through the selected features 
+    for(int i = 0; i < selectedFeatures.size(); i++){
+        int indx = selectedFeatures[i];
+
+        //calculate the distance
+        //we will be using euclidean
+        distance += pow(inst1[indx] - inst2[indx], 2);
+    }
+    return sqrt(distance);
+}
 
 
 
@@ -59,6 +101,22 @@ int main(){
 
     //read the dataset
     readDataSet(filename);
+
+    //have to include a small output for all the features and the accuracy of using all the features
+    //for the data graph
+    vector<int> allFeatures;
+    for(int i = 1; i <= (data[0].size() - 1); i++){
+        allFeatures.push_back(i);
+    }
+
+    double allFeaturesAccuracy = nearestNeighbor(allFeatures);
+    
+    cout << "Using all Features { ";
+    for(int i = 0; i < allFeatures.size(); i++){
+        cout << allFeatures[i] << " ";
+    }
+    cout << " }.";
+    cout << " Accuracy is: " << allFeaturesAccuracy << "%" << endl;
 
     //now, ask which algorithm they want to use
     int algorithm;
