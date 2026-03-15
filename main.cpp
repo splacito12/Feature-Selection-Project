@@ -116,11 +116,55 @@ double nearestNeighbor(vector<int> selectedFeatures){
 
 //this will be our forward selection algorithm
 //we will start with an empty set of features and add one feature at a time
-void forwardSelection(){}
+void forwardSelection(){
+    vector<int> currFeatures;
+
+    vector<int> bestOverallFeatures;
+    double bestOverallAccuracy = 0.0;
+
+    //loop through the features, starting with an empty set
+    for(int i = 1; i <= (data[0].size() - 1); i++){
+        int bestFeature = -1;
+        double bestAccuracy = 0.0;
+
+        //second loop for the features that haven't been selected
+        for(int j = 1; j <= (data[0].size() - 1); j++){
+            //if already selected, skip
+            if(find(currFeatures.begin(), currFeatures.end(),j) != currFeatures.end()){
+                continue;
+            }
+
+            //create temp to hold curr features
+            vector<int> tmpFeatures = currFeatures;
+            tmpFeatures.push_back(j);
+
+            //calculate the accuracy
+            double currAccuracy = nearestNeighbor(tmpFeatures);
+
+            //if the curr accuracy is better than our current best, update the best
+            if(currAccuracy > bestAccuracy){
+                bestAccuracy = currAccuracy;
+                bestFeature = j;   //also update the best feature
+            }
+
+            //output the features and the accuracy
+            cout << "Using feature(s) { ";
+            for(int x = 0; x < tmpFeatures.size(); x++){
+                cout << tmpFeatures[x] << " ";
+            }
+            cout << " }.";
+            cout <<  " Accuracy is: " << currAccuracy << "%" << endl;
+        }
+
+        //add the best feature to our current features
+    }
+}
 
 
 //here we will have our backward elimination algorithm
-//we will start with all the features and remove one feature at a time
+//should be slightly different from forward selection
+//we will start with all the features and remove one 
+// feature at a time
 void backwardElimination(){}
 
 
