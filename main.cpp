@@ -182,7 +182,7 @@ void forwardSelection(){
         cout << bestOverallFeatures[i] << " ";
     }
     cout << "}.";
-    cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl << endl;
+    cout << "With an accuracy of: " << bestOverallAccuracy << "%" << endl;
 }
 
 
@@ -225,7 +225,7 @@ void backwardElimination(){
             }
 
             //output the features and the accuracy
-            cout << "\nUsing feature(s) { ";
+            cout << "Using feature(s) { ";
             for(int k = 0; k < tmpFeatures.size(); k++){
                 cout << tmpFeatures[k] << " ";
             }
@@ -235,7 +235,7 @@ void backwardElimination(){
 
         //remove the worst feature from our current features
         int removedFeature = currFeatures[worstFeature];
-        cout << "Removed feature: " << removedFeature << endl;
+        cout << "\nRemoved feature: " << removedFeature << endl;
 
         currFeatures.erase(currFeatures.begin() + worstFeature);
 
@@ -274,9 +274,9 @@ int main(){
     cout << "Welcome to Sam's Feature Selection Algorithm!" << endl;
 
     //ask for the file name
-    cout << "Before we start, please enter one of the two filename:" << endl;
-    cout << "1. CS170_Large_DataSet__29.txt" << endl;
-    cout << "2. CS170_Small_DataSet__119.txt" << endl;
+    cout << "\nBefore we start, please enter one of the two filename:" << endl;
+    cout << "      1. CS170_Large_DataSet__29.txt" << endl;
+    cout << "      2. CS170_Small_DataSet__119.txt" << endl;
     cin >> filename;
     cout << endl;
 
