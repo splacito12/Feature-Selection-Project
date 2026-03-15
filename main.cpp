@@ -161,7 +161,7 @@ void forwardSelection(){
         currFeatures.push_back(bestFeature);
 
         //now, we will output the best feature and accuracy
-        cout << "The best feature at this level is: { ";
+        cout << "\nThe best feature at this level is: { ";
         for(int k = 0; k < currFeatures.size(); k++){
             cout << currFeatures[k] << " ";
         }
@@ -240,7 +240,7 @@ void backwardElimination(){
         currFeatures.erase(currFeatures.begin() + worstFeature);
 
         //now, we will output the best feature and accuracy
-        cout << "The best feature at this level is: { ";
+        cout << "\nThe best feature at this level is: { ";
         for(int k = 0; k < currFeatures.size(); k++){
             cout << currFeatures[k] << " ";
         }
@@ -302,8 +302,8 @@ int main(){
     //now, ask which algorithm they want to use
     int algorithm;
     cout << "Now, which algorithm do you want to run?" << endl;
-    cout << "1. Forward Selection" << endl;
-    cout << "2. Backward Elimination" << endl;
+    cout << "   1. Forward Selection" << endl;
+    cout << "   2. Backward Elimination" << endl;
     cin >> algorithm;
     cout << endl;
 
