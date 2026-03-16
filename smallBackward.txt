@@ -1,0 +1,228 @@
+Welcome to Sam's Feature Selection Algorithm!
+
+Before we start, please enter one of the two filename:
+      1. CS170_Large_DataSet__29.txt
+      2. CS170_Small_DataSet__119.txt
+
+The Data has been loaded successfully.
+It has 500 instances and 16 features.
+Using all Features { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.4%
+
+Now, which algorithm do you want to run?
+   1. Forward Selection
+   2. Backward Elimination
+
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 73.8%
+Using feature(s) { 1 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.2%
+Using feature(s) { 1 2 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 69.2%
+Using feature(s) { 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.8%
+Using feature(s) { 1 2 3 4 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.4%
+Using feature(s) { 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 69.6%
+Using feature(s) { 1 2 3 4 5 6 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.6%
+Using feature(s) { 1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 }. Accuracy is: 72%
+Using feature(s) { 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 }. Accuracy is: 70.2%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 }. Accuracy is: 70.4%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 }. Accuracy is: 71.6%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 }. Accuracy is: 70%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 11 12 14 15 16 }. Accuracy is: 71.4%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 11 12 13 15 16 }. Accuracy is: 70.4%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 16 }. Accuracy is: 71.4%
+Using feature(s) { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 73.2%
+
+Removed feature: 1
+
+The best feature at this level is: { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }.Accuracy is: 73.8%
+
+Using feature(s) { 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 72.4%
+Using feature(s) { 2 4 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 72.8%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 74.2%
+Using feature(s) { 2 3 4 6 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 73.4%
+Using feature(s) { 2 3 4 5 7 8 9 10 11 12 13 14 15 16 }. Accuracy is: 70.2%
+Using feature(s) { 2 3 4 5 6 8 9 10 11 12 13 14 15 16 }. Accuracy is: 73.8%
+Using feature(s) { 2 3 4 5 6 7 9 10 11 12 13 14 15 16 }. Accuracy is: 73.6%
+Using feature(s) { 2 3 4 5 6 7 8 10 11 12 13 14 15 16 }. Accuracy is: 74%
+Using feature(s) { 2 3 4 5 6 7 8 9 11 12 13 14 15 16 }. Accuracy is: 72.4%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 12 13 14 15 16 }. Accuracy is: 73.4%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 13 14 15 16 }. Accuracy is: 71.2%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 14 15 16 }. Accuracy is: 73%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 15 16 }. Accuracy is: 74%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 14 16 }. Accuracy is: 73.6%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 75.6%
+
+Removed feature: 16
+
+The best feature at this level is: { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }.Accuracy is: 75.6%
+
+Using feature(s) { 3 4 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 73.2%
+Using feature(s) { 2 4 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 75.4%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 75.6%
+Using feature(s) { 2 3 4 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 73.4%
+Using feature(s) { 2 3 4 5 7 8 9 10 11 12 13 14 15 }. Accuracy is: 69.6%
+Using feature(s) { 2 3 4 5 6 8 9 10 11 12 13 14 15 }. Accuracy is: 72.6%
+Using feature(s) { 2 3 4 5 6 7 9 10 11 12 13 14 15 }. Accuracy is: 74.8%
+Using feature(s) { 2 3 4 5 6 7 8 10 11 12 13 14 15 }. Accuracy is: 74.6%
+Using feature(s) { 2 3 4 5 6 7 8 9 11 12 13 14 15 }. Accuracy is: 73.6%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 12 13 14 15 }. Accuracy is: 74%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 13 14 15 }. Accuracy is: 74%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 14 15 }. Accuracy is: 74.6%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 15 }. Accuracy is: 75%
+Using feature(s) { 2 3 4 5 6 7 8 9 10 11 12 13 14 }. Accuracy is: 73.8%
+
+Removed feature: 4
+
+The best feature at this level is: { 2 3 5 6 7 8 9 10 11 12 13 14 15 }.Accuracy is: 75.6%
+
+Using feature(s) { 3 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 75.4%
+Using feature(s) { 2 5 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 74.8%
+Using feature(s) { 2 3 6 7 8 9 10 11 12 13 14 15 }. Accuracy is: 76.8%
+Using feature(s) { 2 3 5 7 8 9 10 11 12 13 14 15 }. Accuracy is: 70.4%
+Using feature(s) { 2 3 5 6 8 9 10 11 12 13 14 15 }. Accuracy is: 72.6%
+Using feature(s) { 2 3 5 6 7 9 10 11 12 13 14 15 }. Accuracy is: 74.8%
+Using feature(s) { 2 3 5 6 7 8 10 11 12 13 14 15 }. Accuracy is: 76.2%
+Using feature(s) { 2 3 5 6 7 8 9 11 12 13 14 15 }. Accuracy is: 76.4%
+Using feature(s) { 2 3 5 6 7 8 9 10 12 13 14 15 }. Accuracy is: 75%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 13 14 15 }. Accuracy is: 75%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 14 15 }. Accuracy is: 76.2%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 13 15 }. Accuracy is: 77.2%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 13 14 }. Accuracy is: 74.2%
+
+Removed feature: 14
+
+The best feature at this level is: { 2 3 5 6 7 8 9 10 11 12 13 15 }.Accuracy is: 77.2%
+
+Using feature(s) { 3 5 6 7 8 9 10 11 12 13 15 }. Accuracy is: 75%
+Using feature(s) { 2 5 6 7 8 9 10 11 12 13 15 }. Accuracy is: 73%
+Using feature(s) { 2 3 6 7 8 9 10 11 12 13 15 }. Accuracy is: 79.6%
+Using feature(s) { 2 3 5 7 8 9 10 11 12 13 15 }. Accuracy is: 71.2%
+Using feature(s) { 2 3 5 6 8 9 10 11 12 13 15 }. Accuracy is: 73.2%
+Using feature(s) { 2 3 5 6 7 9 10 11 12 13 15 }. Accuracy is: 77.8%
+Using feature(s) { 2 3 5 6 7 8 10 11 12 13 15 }. Accuracy is: 76.6%
+Using feature(s) { 2 3 5 6 7 8 9 11 12 13 15 }. Accuracy is: 77.6%
+Using feature(s) { 2 3 5 6 7 8 9 10 12 13 15 }. Accuracy is: 76%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 13 15 }. Accuracy is: 78.2%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 15 }. Accuracy is: 75.4%
+Using feature(s) { 2 3 5 6 7 8 9 10 11 12 13 }. Accuracy is: 74.6%
+
+Removed feature: 5
+
+The best feature at this level is: { 2 3 6 7 8 9 10 11 12 13 15 }.Accuracy is: 79.6%
+
+Using feature(s) { 3 6 7 8 9 10 11 12 13 15 }. Accuracy is: 77.2%
+Using feature(s) { 2 6 7 8 9 10 11 12 13 15 }. Accuracy is: 76.4%
+Using feature(s) { 2 3 7 8 9 10 11 12 13 15 }. Accuracy is: 73.2%
+Using feature(s) { 2 3 6 8 9 10 11 12 13 15 }. Accuracy is: 76.8%
+Using feature(s) { 2 3 6 7 9 10 11 12 13 15 }. Accuracy is: 78.2%
+Using feature(s) { 2 3 6 7 8 10 11 12 13 15 }. Accuracy is: 78.4%
+Using feature(s) { 2 3 6 7 8 9 11 12 13 15 }. Accuracy is: 79.8%
+Using feature(s) { 2 3 6 7 8 9 10 12 13 15 }. Accuracy is: 79%
+Using feature(s) { 2 3 6 7 8 9 10 11 13 15 }. Accuracy is: 79%
+Using feature(s) { 2 3 6 7 8 9 10 11 12 15 }. Accuracy is: 80.2%
+Using feature(s) { 2 3 6 7 8 9 10 11 12 13 }. Accuracy is: 78.2%
+
+Removed feature: 13
+
+The best feature at this level is: { 2 3 6 7 8 9 10 11 12 15 }.Accuracy is: 80.2%
+
+Using feature(s) { 3 6 7 8 9 10 11 12 15 }. Accuracy is: 79.2%
+Using feature(s) { 2 6 7 8 9 10 11 12 15 }. Accuracy is: 78.4%
+Using feature(s) { 2 3 7 8 9 10 11 12 15 }. Accuracy is: 72.2%
+Using feature(s) { 2 3 6 8 9 10 11 12 15 }. Accuracy is: 78.4%
+Using feature(s) { 2 3 6 7 9 10 11 12 15 }. Accuracy is: 79.6%
+Using feature(s) { 2 3 6 7 8 10 11 12 15 }. Accuracy is: 79.2%
+Using feature(s) { 2 3 6 7 8 9 11 12 15 }. Accuracy is: 80%
+Using feature(s) { 2 3 6 7 8 9 10 12 15 }. Accuracy is: 78.8%
+Using feature(s) { 2 3 6 7 8 9 10 11 15 }. Accuracy is: 79%
+Using feature(s) { 2 3 6 7 8 9 10 11 12 }. Accuracy is: 80.8%
+
+Removed feature: 15
+
+The best feature at this level is: { 2 3 6 7 8 9 10 11 12 }.Accuracy is: 80.8%
+
+Using feature(s) { 3 6 7 8 9 10 11 12 }. Accuracy is: 80.2%
+Using feature(s) { 2 6 7 8 9 10 11 12 }. Accuracy is: 81.6%
+Using feature(s) { 2 3 7 8 9 10 11 12 }. Accuracy is: 73.2%
+Using feature(s) { 2 3 6 8 9 10 11 12 }. Accuracy is: 78%
+Using feature(s) { 2 3 6 7 9 10 11 12 }. Accuracy is: 82%
+Using feature(s) { 2 3 6 7 8 10 11 12 }. Accuracy is: 82.6%
+Using feature(s) { 2 3 6 7 8 9 11 12 }. Accuracy is: 80%
+Using feature(s) { 2 3 6 7 8 9 10 12 }. Accuracy is: 81.4%
+Using feature(s) { 2 3 6 7 8 9 10 11 }. Accuracy is: 80%
+
+Removed feature: 9
+
+The best feature at this level is: { 2 3 6 7 8 10 11 12 }.Accuracy is: 82.6%
+
+Using feature(s) { 3 6 7 8 10 11 12 }. Accuracy is: 81.6%
+Using feature(s) { 2 6 7 8 10 11 12 }. Accuracy is: 82%
+Using feature(s) { 2 3 7 8 10 11 12 }. Accuracy is: 74%
+Using feature(s) { 2 3 6 8 10 11 12 }. Accuracy is: 75.8%
+Using feature(s) { 2 3 6 7 10 11 12 }. Accuracy is: 84.2%
+Using feature(s) { 2 3 6 7 8 11 12 }. Accuracy is: 80.8%
+Using feature(s) { 2 3 6 7 8 10 12 }. Accuracy is: 82.8%
+Using feature(s) { 2 3 6 7 8 10 11 }. Accuracy is: 81%
+
+Removed feature: 8
+
+The best feature at this level is: { 2 3 6 7 10 11 12 }.Accuracy is: 84.2%
+
+Using feature(s) { 3 6 7 10 11 12 }. Accuracy is: 80.8%
+Using feature(s) { 2 6 7 10 11 12 }. Accuracy is: 82.2%
+Using feature(s) { 2 3 7 10 11 12 }. Accuracy is: 73%
+Using feature(s) { 2 3 6 10 11 12 }. Accuracy is: 76.4%
+Using feature(s) { 2 3 6 7 11 12 }. Accuracy is: 82%
+Using feature(s) { 2 3 6 7 10 12 }. Accuracy is: 84.4%
+Using feature(s) { 2 3 6 7 10 11 }. Accuracy is: 82.6%
+
+Removed feature: 11
+
+The best feature at this level is: { 2 3 6 7 10 12 }.Accuracy is: 84.4%
+
+Using feature(s) { 3 6 7 10 12 }. Accuracy is: 86.8%
+Using feature(s) { 2 6 7 10 12 }. Accuracy is: 83.8%
+Using feature(s) { 2 3 7 10 12 }. Accuracy is: 72.4%
+Using feature(s) { 2 3 6 10 12 }. Accuracy is: 75.4%
+Using feature(s) { 2 3 6 7 12 }. Accuracy is: 85.2%
+Using feature(s) { 2 3 6 7 10 }. Accuracy is: 89.4%
+
+Removed feature: 12
+
+The best feature at this level is: { 2 3 6 7 10 }.Accuracy is: 89.4%
+
+Using feature(s) { 3 6 7 10 }. Accuracy is: 90%
+Using feature(s) { 2 6 7 10 }. Accuracy is: 91.6%
+Using feature(s) { 2 3 7 10 }. Accuracy is: 76%
+Using feature(s) { 2 3 6 10 }. Accuracy is: 80.4%
+Using feature(s) { 2 3 6 7 }. Accuracy is: 88.8%
+
+Removed feature: 3
+
+The best feature at this level is: { 2 6 7 10 }.Accuracy is: 91.6%
+
+Using feature(s) { 6 7 10 }. Accuracy is: 94.4%
+Using feature(s) { 2 7 10 }. Accuracy is: 75%
+Using feature(s) { 2 6 10 }. Accuracy is: 79.2%
+Using feature(s) { 2 6 7 }. Accuracy is: 91.4%
+
+Removed feature: 2
+
+The best feature at this level is: { 6 7 10 }.Accuracy is: 94.4%
+
+Using feature(s) { 7 10 }. Accuracy is: 75.6%
+Using feature(s) { 6 10 }. Accuracy is: 80.8%
+Using feature(s) { 6 7 }. Accuracy is: 95.6%
+
+Removed feature: 10
+
+The best feature at this level is: { 6 7 }.Accuracy is: 95.6%
+
+Using feature(s) { 7 }. Accuracy is: 75%
+Using feature(s) { 6 }. Accuracy is: 82.6%
+
+Removed feature: 7
+
+The best feature at this level is: { 6 }.Accuracy is: 82.6%
+
+
+Finished Search!!
+The best feature subset is: {6 7 }. With an accuracy of: 95.6%
+
